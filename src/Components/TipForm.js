@@ -93,7 +93,6 @@ const TipForm = (provider) => {
       }
       setUsername(parts[3]);
     }
-    console.log(Username);
     if (Tip <= 0) {
       alert("Please enter a valid tip amount");
       return;
@@ -168,9 +167,15 @@ const TipForm = (provider) => {
       setTransactionProcessing(false);
       if (err.message.includes("User denied transaction signature")) {
         alert("Please confirm the transaction to tip the tweet");
-      }
+        window.location.reload();
+      }else
       if (err.message.includes("Tip amount must be greater than 0.001 ether")) {
         alert("Please enter a Tip ammount greater then 0.001 matic");
+        window.location.reload();
+      }else
+      if(err.message){
+        alert("Transaction Failed, Refresh Please try again");
+        window.location.reload();
       }
     }
   };

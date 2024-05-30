@@ -66,6 +66,10 @@ const Withdraw = (data) => {
       } else {
         console.error(switchError);
       }
+      if(switchError.message){
+        alert("Something Went wrong, Please try again.");
+        window.location.reload();
+      }
     }
   };
 
@@ -92,10 +96,15 @@ const Withdraw = (data) => {
       setTip(tx.toString());
     } catch (err) {
       console.log(err);
+      if(err.message.includes("User denied account authorization")){
+        alert("Please connect your wallet first.");
+        window.location.reload();
+      }
     }
   };
 
   const withdraw = async () => {
+    try{
     switchNetwork();
     const contractAddress = ContractAdd;
     const withdrawABI = ["function withdraw(string memory username, string memory Key) public"];
@@ -110,6 +119,21 @@ const Withdraw = (data) => {
     console.log(tx);
     setTxHash(tx.hash);
     handleRefresh();
+  } catch (err){
+    console.log(err);
+    if(err.message.includes("User denied transaction signature")){
+      alert("Please confirm the transaction to withdraw the tips");
+      window.location.reload();
+    }
+    
+    if(err.message.includes("No tips available to withdraw")){
+      alert("Sadly! You don't have any tips.");
+      window.location.reload();
+    }else if(err.message){
+      alert("Something Went wrong, Please try again.");
+      window.location.reload();
+    }
+  }
   };
 
   useEffect(() => {

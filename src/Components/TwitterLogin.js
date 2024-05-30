@@ -51,6 +51,13 @@ const TwitterLogin = (currentProvider) => {
       disconnectWallet();
     } catch (error) {
       console.error(error);
+      if(error.message === "Cannot read property 'send' of undefined"){
+        alert("Please connect your wallet first.");
+        window.location.reload();
+      }else if(error.message){
+        alert("Something Went wrong, Please try again.");
+        window.location.reload();
+      }
     }
   };
 

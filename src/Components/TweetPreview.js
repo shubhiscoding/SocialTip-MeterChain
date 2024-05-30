@@ -37,9 +37,19 @@ const TweetPreview = ({ url, payTip }) => {
         button.innerText = "Confirm";
         container.appendChild(button);
         button.addEventListener("click", () => payTip());
+      }else{
+        alert("Please enter a valid tweet URL");
       }
     } catch (err) {
       console.log(err);
+      if(err.message === "Cannot read property 'appendChild' of null"){
+        alert("Please enter a valid tweet URL");
+        window.location.reload();
+      }else
+      if(err.message){
+        alert("Something Went wrong, Please try again.");
+        window.location.reload();
+      }
     }
   };
 
