@@ -171,7 +171,7 @@ const TipForm = (provider) => {
       }else
       if (err.message.includes("Tip amount must be greater than 0.001 ether")) {
         alert("Please enter a Tip ammount greater then 0.001 matic");
-        window.location.reload();
+      window.location.reload();
       }else
       if(err.message){
         alert("Transaction Failed, Refresh Please try again");
