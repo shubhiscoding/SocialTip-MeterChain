@@ -1,28 +1,29 @@
+import React, { useEffect, useState } from "react";
 import NavBar, { getCurrentProvider } from "./Components/NavBar";
 import TipForm from "./Components/TipForm";
 import Home from "./Components/Home";
 import TwitterLogin from "./Components/TwitterLogin";
+import SplashScreen from "./Components/SplashScreen";
 import "./Styles/TipForm.css";
 import "./App.css";
 import { BrowserRouter as Route } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 function App() {
-  const [currentProvider, setCurrentProvider] = useState("Sepolia ETH");
+  const [currentProvider, setCurrentProvider] = useState("Base Sepolia Testnet");
+  const [isSplashVisible, setIsSplashVisible] = useState(true);
 
-  useEffect(() => {
-    if (localStorage.getItem("currentProvider")) {
-      setCurrentProvider(localStorage.getItem("currentProvider"));
-    }
-  }, []);
+  const handleLottieLoaded = () => {
+    setIsSplashVisible(false);
+  };
 
   console.log(currentProvider);
 
   return (
     <div className="App">
+      {isSplashVisible &&
+        <SplashScreen onAnimationComplete={handleLottieLoaded} />}
       <header className="App-header" id="home">
-        <NavBar />
-        <Home />
+        <Home onLottieLoaded={handleLottieLoaded} />
         <TipForm provider={currentProvider} />
         <TwitterLogin currentProvider={currentProvider} />
       </header>
