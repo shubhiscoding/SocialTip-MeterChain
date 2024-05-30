@@ -6,6 +6,7 @@ import TwitterLogin from "./Components/TwitterLogin";
 import SplashScreen from "./Components/SplashScreen";
 import "./Styles/TipForm.css";
 import "./App.css";
+import "./Styles/Responsive.css"
 import { BrowserRouter as Route } from "react-router-dom";
 
 function App() {

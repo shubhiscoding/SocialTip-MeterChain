@@ -8,7 +8,7 @@
   font-size: 20px;
   border-radius: 10px;
   padding: 2rem;
-  margin-top: 6rem;
+  /* margin-top: 6rem; */
 }
 .Withdraw-Content{
   display: flex;
@@ -29,16 +29,25 @@
   max-height: 3rem;
 }
 
+.withdraw-btns {
+  /* width: 100%; */
+  /* max-width: 50%; */
+}
+
 .twitter-withdraw-btn {
-  padding: 0.5rem 1.3rem;
-  border-radius: 20px;
-  background-color: #010001; /* Neon accent */
-  color: #ffffff;
   border-radius: 30px;
   border: 2px solid white;
+  padding: 0.5rem 2.3rem;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #010001;
+  cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  max-width: 100%;
+  min-width: 15%;
+
 }
 
 .User-details{
@@ -70,10 +79,14 @@
 
 }
 
+.refresh {
+  max-width: 100px;
+  margin-left: 10px;
+}
+
 .TwitterLogin h1 {
-  margin-bottom: 4rem;
   font-weight: 400;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 .TwitterLogin h2 {
@@ -87,7 +100,7 @@
 .balance {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -99,7 +112,6 @@
   border-radius: 30px;
   border: 2px solid white;
   padding: 0.5rem 1.3rem;
-  margin-left: 1rem;
   font-size: 0.8rem;
   color: white;
   background-color: #010001;
@@ -118,7 +130,7 @@
   transition: all 0.3s ease;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  /* max-width: 15%; */
+  max-width: 100%;
   min-width: 15%;
 }
 
