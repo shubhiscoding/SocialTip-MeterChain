@@ -14,40 +14,13 @@ const Withdraw = (data) => {
   const Key = process.env.REACT_APP_HASH;
 
   const networkParams = {
-    "Sepolia ETH": {
-      chainId: "0xaa36a7", // Chain ID for Sepolia
-      chain: "11155111",
-      chainName: "Sepolia Test Network",
-      rpcUrls: ["https://rpc.sepolia.org"],
-      nativeCurrency: { name: "Ethereum", symbol: "ETH", decimals: 18 },
-      blockExplorerUrls: ["https://sepolia.etherscan.io/tx/"],
-      contractAddress: "0x9d356bf3f6B154Da52a3eEa5F686480de52Aa8e9",
-    },
-    "Amoy Matic": {
-      chainId: "0x13882", // Chain ID for Mumbai (Polygon Testnet)
-      chain: "80002",
-      chainName: "Amoy Test Network",
-      rpcUrls: ["https://rpc-amoy.polygon.technology/"],
-      nativeCurrency: { name: "Matic", symbol: "MATIC", decimals: 18 },
-      blockExplorerUrls: ["https://www.oklink.com/amoy/tx/"],
-      contractAddress: "0x7E90f2E631345D3F1e1056CaD15a2553360Dd73d",
-    },
-    "Base Sepolia Testnet": {
-      chainId: "0x14a34",
-      chain: "84532",
-      chainName: "Base Sepolia Test Network",
-      rpcUrls: ["https://base-sepolia.blockpi.network/v1/rpc/public"],
-      nativeCurrency: { name: "Ethereum", symbol: "ETH", decimals: 18 },
-      blockExplorerUrls: ["https://base-sepolia.blockscout.com/tx/"],
-      contractAddress: "0xBA9420F21bc1B7AdB0c604e2452c210fc82b7089",
-    },
     "Meter Testnet": {
       chainId: "0x53",
       chain: "83",
       chainName: "Meter Testnet",
       rpcUrls: ["https://rpctest.meter.io/"],
       nativeCurrency: { name: "Meter", symbol: "MTR", decimals: 18 },
-      blockExplorerUrls: ["https://scan-warringstakes.meter.io/"],
+      blockExplorerUrls: ["https://scan-warringstakes.meter.io/tx/"],
       contractAddress: "0x25c1251aD34194938558F738611258c052E8ACb1",
     },
   };
