@@ -41,6 +41,15 @@ const Withdraw = (data) => {
       blockExplorerUrls: ["https://base-sepolia.blockscout.com/tx/"],
       contractAddress: "0xBA9420F21bc1B7AdB0c604e2452c210fc82b7089",
     },
+    "Meter Testnet": {
+      chainId: "0x53",
+      chain: "83",
+      chainName: "Meter Testnet",
+      rpcUrls: ["https://rpctest.meter.io/"],
+      nativeCurrency: { name: "Meter", symbol: "MTR", decimals: 18 },
+      blockExplorerUrls: ["https://scan-warringstakes.meter.io/"],
+      contractAddress: "0x25c1251aD34194938558F738611258c052E8ACb1",
+    },
   };
 
   const ContractAdd = networkParams[currentProvider].contractAddress;
@@ -114,11 +123,13 @@ const Withdraw = (data) => {
     tx.wait().then((receipt) => {
       console.log("Withdrawn");
       console.log(receipt["hash"]);
+      setLoading(false);
+      console.log(loading);
+      window.location.reload();
+      setTxHash(tx.hash);
+      handleRefresh();
     });
-    setLoading(false);
-    console.log(tx);
-    setTxHash(tx.hash);
-    handleRefresh();
+    // console.log(tx);
   } catch (err){
     console.log(err);
     if(err.message.includes("User denied transaction signature")){
@@ -150,12 +161,10 @@ const Withdraw = (data) => {
     setTip(null);
     setLoading(true);
     setTimeout(() => {}, 10000);
-    setLoading(false);
     paytip();
   };
 
   const HashLink = (hash) => {
-    console.log(Explorer, hash);
     if(Explorer && hash)
     var link = Explorer + hash;
     return link;

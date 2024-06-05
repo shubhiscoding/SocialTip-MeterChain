@@ -10,7 +10,7 @@ import "./Styles/Responsive.css"
 import { BrowserRouter as Route } from "react-router-dom";
 
 function App() {
-  const [currentProvider, setCurrentProvider] = useState("Base Sepolia Testnet");
+  const [currentProvider, setCurrentProvider] = useState("Meter Testnet");
   const [isSplashVisible, setIsSplashVisible] = useState(true);
 
   const handleLottieLoaded = () => {

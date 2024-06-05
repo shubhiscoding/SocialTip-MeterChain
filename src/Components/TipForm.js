@@ -44,7 +44,16 @@ const TipForm = (provider) => {
       blockExplorerUrls: ["https://base-sepolia.blockscout.com/tx/"],
       contractAddress: "0xBA9420F21bc1B7AdB0c604e2452c210fc82b7089",
     },
-  };
+    "Meter Testnet": {
+      chainId: "0x53",
+      chain: "83",
+      chainName: "Meter Testnet",
+      rpcUrls: ["https://rpctest.meter.io/"],
+      nativeCurrency: { name: "Meter", symbol: "MTR", decimals: 18 },
+      blockExplorerUrls: ["https://scan-warringstakes.meter.io/"],
+      contractAddress: "0x25c1251aD34194938558F738611258c052E8ACb1",
+    },
+    };
 
   const ContractAdd = networkParams[currentProvider].contractAddress;
 
